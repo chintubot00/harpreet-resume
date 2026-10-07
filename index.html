@@ -3,38 +3,186 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Harpreet Khaira — résumé">
-  <meta name="theme-color" content="#0b1220">
-  <title>Harpreet Khaira — Résumé</title>
+  <meta name="description" content="Harpreet Khaira — Senior AI Engineer specializing in production agents, orchestration, evaluations, and backend systems.">
+  <meta name="theme-color" content="#f6f4ef">
+  <meta property="og:title" content="Harpreet Khaira — Senior AI Engineer">
+  <meta property="og:description" content="Production agents, orchestration, evaluations, and backend systems.">
+  <title>Harpreet Khaira — Senior AI Engineer</title>
   <style>
-    :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    :root {
+      --ink: #172033;
+      --muted: #596477;
+      --paper: #fffdf9;
+      --canvas: #f3f0e9;
+      --accent: #0c7182;
+      --line: #d8d4cb;
+      --tag: #e5f3f4;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
     * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; background: #0b1220; color: #f8fafc; display: grid; place-items: center; padding: 24px; }
-    main { width: min(680px, 100%); text-align: center; }
-    .card { padding: clamp(30px, 7vw, 64px); border: 1px solid #273449; border-radius: 24px; background: linear-gradient(145deg, #111c30, #0e1728); box-shadow: 0 24px 80px #0008; }
-    .eyebrow { margin: 0 0 12px; color: #7dd3fc; font-size: .82rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
-    h1 { margin: 0; font-size: clamp(2.1rem, 8vw, 4.5rem); line-height: 1; letter-spacing: -.045em; }
-    .subtitle { margin: 18px auto 30px; max-width: 42ch; color: #b8c5d8; font-size: clamp(1rem, 3vw, 1.2rem); line-height: 1.6; }
-    .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    a { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 22px; border-radius: 999px; font-weight: 750; text-decoration: none; transition: transform .15s ease, background .15s ease; }
-    a:hover { transform: translateY(-2px); }
-    .primary { background: #38bdf8; color: #06131f; }
-    .secondary { border: 1px solid #53627a; color: #f8fafc; background: #ffffff08; }
-    footer { margin-top: 18px; color: #718096; font-size: .78rem; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--canvas); line-height: 1.55; }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    .page { width: min(980px, calc(100% - 32px)); margin: 32px auto; padding: clamp(26px, 6vw, 68px); background: var(--paper); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 20px 60px rgba(23,32,51,.09); }
+    header { display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: end; padding-bottom: 28px; border-bottom: 2px solid var(--ink); }
+    h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.5rem, 7vw, 5.5rem); line-height: .94; letter-spacing: -.045em; }
+    .headline { margin: 14px 0 0; max-width: 680px; color: var(--accent); font-size: clamp(1rem, 2.3vw, 1.25rem); font-weight: 700; }
+    .actions { display: flex; flex-direction: column; gap: 10px; min-width: 148px; }
+    .button { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding: 0 18px; border: 1px solid var(--ink); border-radius: 999px; color: var(--ink); font-weight: 750; text-decoration: none; transition: transform .15s ease, background .15s ease; }
+    .button:first-child { border-color: var(--accent); background: var(--accent); color: white; }
+    .button:hover { transform: translateY(-2px); }
+    .contact { display: flex; flex-wrap: wrap; gap: 7px 18px; margin: 22px 0 4px; padding: 0; list-style: none; color: var(--muted); font-size: .91rem; }
+    .contact a { color: inherit; }
+    section { margin-top: 34px; }
+    h2 { display: flex; gap: 12px; align-items: center; margin: 0 0 18px; color: var(--accent); font-size: .78rem; letter-spacing: .15em; text-transform: uppercase; }
+    h2::after { content: ""; height: 1px; flex: 1; background: var(--line); }
+    .skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 24px; }
+    .skill { margin: 0; font-size: .94rem; }
+    .skill strong { display: block; margin-bottom: 2px; color: var(--ink); }
+    .skill span { color: var(--muted); }
+    .role { position: relative; padding-left: 22px; }
+    .role + .role { margin-top: 27px; }
+    .role::before { content: ""; position: absolute; top: .45rem; left: 0; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    .role-head { display: grid; grid-template-columns: 1fr auto; gap: 4px 20px; align-items: baseline; }
+    h3 { margin: 0; font-size: 1.08rem; }
+    .company { color: var(--accent); font-weight: 750; }
+    .context { margin: 1px 0 0; color: var(--muted); font-size: .9rem; font-style: italic; }
+    time { color: var(--muted); font-size: .86rem; white-space: nowrap; }
+    ul.bullets { margin: 10px 0 0; padding-left: 19px; }
+    .bullets li { margin: 6px 0; padding-left: 3px; }
+    .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .project { padding: 17px 18px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+    .project h3 { margin-bottom: 5px; }
+    .project p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .education { display: grid; gap: 14px; }
+    .edu { display: grid; grid-template-columns: 1fr auto; gap: 12px; }
+    .edu p { margin: 1px 0 0; color: var(--muted); font-size: .9rem; }
+    footer { margin-top: 42px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; text-align: center; }
+    @media (max-width: 680px) {
+      .page { width: 100%; margin: 0; border: 0; border-radius: 0; }
+      header { grid-template-columns: 1fr; align-items: start; }
+      .actions { flex-direction: row; flex-wrap: wrap; }
+      .skills, .projects { grid-template-columns: 1fr; }
+      .role-head, .edu { grid-template-columns: 1fr; }
+      time { grid-row: 3; }
+    }
+    @media print {
+      body { background: white; }
+      .page { width: 100%; margin: 0; padding: 0; border: 0; box-shadow: none; }
+      .actions { display: none; }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <section class="card">
-      <p class="eyebrow">Résumé</p>
-      <h1>Harpreet Khaira</h1>
-      <p class="subtitle">AI engineer building reliable agentic systems and production-grade AI products.</p>
-      <div class="actions">
-        <a class="primary" href="harpreet-khaira-resume.pdf" target="_blank" rel="noopener">View résumé</a>
-        <a class="secondary" href="harpreet-khaira-resume.pdf" download>Download PDF</a>
+  <main class="page">
+    <header>
+      <div>
+        <h1>Harpreet<br>Khaira</h1>
+        <p class="headline">Senior AI Engineer · Production Agents · Orchestration · Evals · Backend Systems</p>
+      </div>
+      <nav class="actions" aria-label="Resume actions">
+        <a class="button" href="harpreet-khaira-resume.pdf" target="_blank" rel="noopener">Open PDF</a>
+        <a class="button" href="harpreet-khaira-resume.pdf" download>Download</a>
+      </nav>
+    </header>
+
+    <ul class="contact" aria-label="Contact information">
+      <li>SF Bay Area, CA</li>
+      <li><a href="mailto:harpreet.hrk@gmail.com">harpreet.hrk@gmail.com</a></li>
+      <li><a href="tel:+16463866431">+1 646-386-6431</a></li>
+      <li><a href="https://github.com/hkhaira" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/harpreet-khaira" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+
+    <section aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Technical Skills</h2>
+      <div class="skills">
+        <p class="skill"><strong>AI &amp; Agents</strong><span>Multi-agent systems, orchestration, memory, multistep reasoning, tool use, MCP, RAG</span></p>
+        <p class="skill"><strong>Reliability</strong><span>LLM evaluations, LLM-as-judge, observability, tracing, telemetry, verification loops</span></p>
+        <p class="skill"><strong>Backend &amp; Data</strong><span>Python, TypeScript, FastAPI, R, Rust, Kafka, Neo4j, BigQuery, Elasticsearch, PostgreSQL</span></p>
+        <p class="skill"><strong>Cloud &amp; Delivery</strong><span>AWS, GCP, Docker, CI/CD, distributed systems, MLOps, A/B testing</span></p>
       </div>
     </section>
-    <footer>Last updated August 2026</footer>
+
+    <section aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Professional Experience</h2>
+
+      <article class="role">
+        <div class="role-head">
+          <h3>Senior AI Engineer · <span class="company">BioRender</span></h3>
+          <time>Jun 2025 – Jul 2026</time>
+          <p class="context">0-to-1 agentic scientific analysis product</p>
+        </div>
+        <ul class="bullets">
+          <li>Architected and productionized a <strong>CrewAI-based multi-agent system</strong> that transformed raw experimental data into validated analyses, visualizations, and conclusions, accelerating manual analysis cycles by up to <strong>10×</strong>.</li>
+          <li>Built hybrid deterministic and agentic pipelines for Excel ingestion, schema inference, data normalization, analytical-table generation, statistical computation, and research-thesis validation.</li>
+          <li>Developed the agent infrastructure end to end, including orchestration, memory, tool integrations, MCP servers, multistep reasoning, and domain-specific analysis capabilities.</li>
+          <li>Implemented Datadog telemetry, tracing, logging, and hybrid evaluations, combining programmatic checks with LLM-as-judge rubrics to diagnose failures and measure quality.</li>
+          <li>Owned architecture and productionization across Python, FastAPI, R, and product-facing services, separating agent judgment from deterministic execution for reproducible, auditable results.</li>
+          <li>Founded and led the <strong>AI Guild for 10–15 engineers</strong>, establishing standards for agent design, specifications, verification loops, and AI-assisted development.</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-head">
+          <h3>Senior Software Engineer / Technical Lead · <span class="company">Target</span></h3>
+          <time>Oct 2022 – May 2025</time>
+          <p class="context">Enterprise data platform &amp; Graph RAG</p>
+        </div>
+        <ul class="bullets">
+          <li>Built a production data platform synthesizing status and dependency signals from <strong>100+ sources</strong> for enterprise Networking, Security, and Change Management teams.</li>
+          <li>Implemented a <strong>Graph RAG context-discovery system</strong>, increasing daily active usage by <strong>10×</strong>; built pipelines processing terabytes of daily data.</li>
+          <li>Scaled the team from 2 to 5 engineers as technical lead, owning architecture, delivery quality, mentoring, and cross-team execution.</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-head">
+          <h3>Senior Software Engineer · <span class="company">Autodesk</span></h3>
+          <time>Feb 2018 – Oct 2022</time>
+          <p class="context">Autodesk Drive — document lifecycle at scale</p>
+        </div>
+        <ul class="bullets">
+          <li>Led backend development for Autodesk Drive, serving <strong>100K+ monthly active users</strong>; scaled services to <strong>50K+ requests/minute</strong> and improved customer retention by 200%.</li>
+          <li>Built CI/CD and experimentation workflows that increased shipment rate by 10×; production monitoring reduced mean time to detect by 300%.</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-head">
+          <h3>Software Engineer · <span class="company">Bank of America</span></h3>
+          <time>Jul 2014 – Jun 2016</time>
+        </div>
+        <ul class="bullets">
+          <li>Built an award-winning cross-browser automation framework that reduced testing effort by <strong>96%</strong>.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Selected Projects</h2>
+      <div class="projects">
+        <article class="project">
+          <h3><a href="https://github.com/hkhaira/paperpulse-ai" target="_blank" rel="noopener">PaperPulse AI</a></h3>
+          <p>Research-paper summarization and reproduction assistant that reduced replication time by 75%.</p>
+        </article>
+        <article class="project">
+          <h3>RL Policy Optimization</h3>
+          <p>Value iteration, Q-learning, and Monte Carlo methods that reduced simulated crash rate by 90%.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+      <div class="education">
+        <div class="edu"><div><strong>Carnegie Mellon University</strong><p>M.S. Computer Software Engineering</p></div><time>2016 – 2017</time></div>
+        <div class="edu"><div><strong>Vellore Institute of Technology</strong><p>B.Tech Computer Science</p></div><time>2010 – 2014</time></div>
+        <div class="edu"><div><strong>Stanford University</strong><p>AI Certificate: Deep Learning, Reinforcement Learning, AI Ethics</p></div><time>2024</time></div>
+      </div>
+    </section>
+
+    <footer>Resume content updated August 2026 · PDF available above</footer>
   </main>
 </body>
 </html>
